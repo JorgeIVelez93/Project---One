@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Oregano&display=swap");
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="ribbon">
+      <section class="title">
+        <h1>Avatar: The Last Trivia</h1>
+      </section>
+      <section class="btns">
+        <button id="startGame">Claim Your Riches</button>
+        <button id="reset">Launch Another Venture</button>
+      </section>
+    </div>
+    <section class="divider">
+      <div class="answerKey">
+        <h2>Instructions</h2>
+        <br />
+        <p>
+          Test your Avatar knowledge and see if you can go from lowly cabbage
+          merchant to Ba Sing Se socialite.
+        </p>
+        <br />
+        <p>
+          Answer questions of increasing difficulty, accumulate wealth and
+          ascend through society.
+        </p>
+        <br />
+        <!-- <h2>Question</h2> -->
+        <h3 id="question">
+          "Hope is something you give yourself. That is the meaning of true
+          inner strengh."
+        </h3>
+        <input type="radio" id="answer" name="answer" value="A" />
+        <label class="answers" for="answerA">Water</label>
+        <input type="radio" id="answer" name="answer" value="B" />
+        <label class="answers" for="answerB">Earth</label>
+        <input type="radio" id="answer" name="answer" value="C" />
+        <label class="answers" for="answerC">Fire</label>
+        <input type="radio" id="answer" name="answer" value="D" />
+        <label class="answers" for="answerD">Air</label>
+        <button id="submit">Submit</button>
+      </div>
+      <div>
+        <canvas width="700" height="500" id="canvas"></canvas>
+      </div>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>
