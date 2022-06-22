@@ -396,7 +396,7 @@ let img = new Image();
 img.src = "Images/Cabbages.png"
 
 let img2 = new Image();
-img2.src = "/Images/Suyin_Beifong_Render.png"
+img2.src = "Images/Suyin_Beifong_Render.png"
 
 let img3 = new Image();
 img3.src = "Images/Longfengfull.png"
