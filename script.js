@@ -143,8 +143,8 @@ let hardStock = [
         },
     {
         question: `Who is a member of the white lotus?`,
-        answer: [`Zhaire`,`~49k`,`~53k`,`~63k`],
-        correctAnswer: `D`,
+        answer: [`Zhaire`,`Bumi`,`Gyatso`,`Genji`],
+        correctAnswer: `B`,
         value: 25000
          },
     {
