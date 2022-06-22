@@ -9,7 +9,7 @@ let score = 0;
 
 // Trivia Questions Section-----------------------------------------
 // EASY QUESTIONS
-let easy = [{
+let easyStock = [{
     question: `How many bending elements are there?` ,
     answer: [`Two`,`Four`,`Six`,`Eight`],
     correctAnswer: `B`,
@@ -71,7 +71,7 @@ let easy = [{
     },
 ]
 // MEDIUM QUESTIONS
-let medium = [
+let mediumStock = [
     {
         question: `What is Iroh's nick name?`,
         answer: [`The Dragon of the West`, `The Sleeping Bison`,`A Chattering Hog Monkey`,`The Tsungi God`],
@@ -127,74 +127,74 @@ let medium = [
         value: 10000
         },
     {
-        question: `What is this number? 10101 `,
-        answer: [24,31,23,20],
-        correctAnswer: 23,
+        question: `Bonus: What is this number? 10101 `,
+        answer: [24,21,23,20],
+        correctAnswer: `B`,
         value: 25250
         },
 ]
 // HARD QUESTIONS
-let hard = [
+let hardStock = [
     {
-        question: `In what century was the Dutch East India Company founded?`,
-        answer: [`18th`, `14th`, `20th`,`17th`],
-        correctAnswer: `17th`,
-        value: 100000
+        question: `Who is Piando?`,
+        answer: [`craftsman`, `black smith`, `sword smith`,`fisherman`],
+        correctAnswer: `C`,
+        value: 25000
         },
     {
-        question: `What is the average GDP per American household?`,
-        answer: [`~81k`,`~49k`,`~53k`,`~63k`],
-        correctAnswer: `~63k`,
-        value: 100000
-         }//,
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
-    // {
-    //     question: ,
-    //     answer: [],
-    //     correctAnswer: ,
-    //     value: 100000
-    //     },
+        question: `Who is a member of the white lotus?`,
+        answer: [`Zhaire`,`~49k`,`~53k`,`~63k`],
+        correctAnswer: `D`,
+        value: 25000
+         },
+    {
+        question: `Who said the quote in the beginning of this quiz?`,
+        answer: [`Iroh`, `Combustion Man`, `Roku`, `Tarloq`],
+        correctAnswer: `A`,
+        value: 25000
+        },
+    {
+        question: `What is the Avatar the bridge of?`,
+        answer: [`The Economy and Classism`, `The Spirit World and Humans`, `The Great Divide`, `The North and South Poles`],
+        correctAnswer: `B`,
+        value: 25000
+        },
+    {
+        question: `What is Hei Bei?`,
+        answer: [`demon`, `parrot`, `panda`, `Sand bender`],
+        correctAnswer: `C`,
+        value: 25000
+        },
+    {
+        question: `Who is Zuko's great grant father from his mother's side? `,
+        answer: [`Zhao`, `Roku`, `Bumi`,`Kurok`],
+        correctAnswer: `B`,
+        value: 25000
+        },
+    {
+        question: `Until what age did Avatar Kyoshi live?`,
+        answer: [200,320,230,130],
+        correctAnswer: `C`,
+        value: 25000
+        },
+    {
+        question: `Who commanded the Dai Li before Azula?`,
+        answer: [`Long Feng`, `Toph Beifong`, `Han`, `Koh`],
+        correctAnswer: `A`,
+        value: 25000
+        },
+    {
+        question: `Who is the face stealer?`,
+        answer: [`Piando`,`Koh`,`Rava`,`Koizilla`],
+        correctAnswer: `B`,
+        value: 25000
+        },
+    {
+        question: `Bonus: When was Ironhack founded?`,
+        answer: [2015,2016,2014,2013],
+        correctAnswer: `D`,
+        value: 50000
+        },
 ]
 // Trivia questions end -----------------------------------------
 
@@ -204,7 +204,7 @@ class Progress {
         this.x= 620,
         this.y= canvas.height-20,
         this.w= 80,
-        this.h= 20
+        this.h= 17
     }
     draw() {
         ctx.fillStyle = "rgba(32, 56, 37,.6)"
@@ -240,9 +240,10 @@ class Difficulty {
 let diff = new Difficulty();
 
 // Game engine
+let game;
 
 let animate = () => {
-    window.requestAnimationFrame(animate)
+    game = window.requestAnimationFrame(animate)
     ctx.clearRect(0,0,canvas.width,canvas.height)
     // score
     ctx.fillStyle = "#D0D157"
@@ -254,35 +255,55 @@ let animate = () => {
     // ctx.fillStyle = "#9FA281"
     // ctx.fillRect(620,0,80,500)
     //Avatar
-    if (score >= 30000 && score < 50000) {
-        ctx.drawImage(img2, 250,160,canvas.width*.25,canvas.height-160)
-    } else if (score > 75000) {
-        ctx.drawImage(img3, 250,160,canvas.width*.25,canvas.height-160)
+    if (score >= 34000 && score < 224999) {
+        ctx.drawImage(img2, 250,95,canvas.width*.35,canvas.height-95)
+    } else if (score > 225000) {
+        ctx.drawImage(img3, 250,95,canvas.width*.35,canvas.height-95)
     }
      else {
-    ctx.drawImage(img, 250,160,canvas.width*.25,canvas.height-160)
+    ctx.drawImage(img, 270,90,canvas.width*.25,canvas.height-80)
     }
     prog.draw()
     diff.draw();
     if (easy.length === 0 && medium.length >0) {
         diff.replaceW(`Med`)
         // diff.drawMedium();
-    } else if ( medium.length === 0) {
+    } else if ( medium.length === 0 && hard.length >0) {
         diff.replaceW(`Hard`)
         // diff.drawHard();
     } else {
         diff.replaceW(`Easy`)
         // diff.drawEasy();
     }
+    
+    if (easy.length === 0 && medium.length === 0 && hard.length === 0) {
+        console.log(`array is empty`)
+        gameOver()
+
+    }
    
     
     
 }
 
+let easy; 
+let medium;
+let hard;
+
+let gameOn = false;
 // Start game function
 let startGame = () => {
-    animate()
     bgAudio.play()
+    if (!gameOn) {
+        score = 0;
+        gameOn = true;
+        easy = [...easyStock]
+        medium = [...mediumStock]
+        hard = [...hardStock]
+        prog.h=17;
+        prog.y= canvas.height-17;
+        animate();
+    }
 }
 //On start button press
 document.getElementById(`startGame`).onclick = () => {
@@ -342,10 +363,14 @@ document.getElementById(`startGame`).onclick = () => {
         let isSelected = document.querySelector(`input[name="answer"]:checked`).value;
     if (isSelected === randomQ.correctAnswer){
         score += randomQ.value
+        right.play();
+        right.volume = .5
         // console.log(score)
         // return true
     } else {
         score -= randomQ.value * .10
+        wrong.play();
+        wrong.volume =.7
         console.log(score)
         // return false
     } 
@@ -377,13 +402,31 @@ let img3 = new Image();
 img3.src = "Images/Longfengfull.png"
 
 let bg = new Image();
-bg.src = "Images/omashu.jpg"
+bg.src = "Images/8484020903b7e65727c4e1a574b33321.1000x1000x1.jpg"
 let bg2 = new Image();
 bg2.src = "Images/Earth Kingdom.webp"
 
-let bgAudio = new Audio("./audio/26The Chakras.mp3")
+
+let bgAudio = new Audio("audio/26The Chakras.mp3")
 bgAudio.volume=.25
 bgAudio.loop=true
+
+let wrong = new Audio("audio/thats-rough-buddy.mp3")
+let right = new Audio("audio/sound-effects-library-cash-register-sound.mp3")
+
+// End Game 
+let gameOver = () => {
+    window.cancelAnimationFrame(game);
+    // console.log(`game over`)
+    ctx.clearRect(0,0,canvas.width, canvas.height)
+    ctx.fillStyle = "#203825"
+    ctx.font = "30px Oregano"
+    ctx.fillText(`This is the end of your journey. Total Ban: ${score}`, 100,60)
+    gameOn = false;
+}
+
+
+
 
 
 

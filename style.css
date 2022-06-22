@@ -39,9 +39,10 @@ width: 50vw;
 }
 .btns > button {
     font-size: 2vw;
-    margin: 2vw;
+    margin-top: 3vw;
     text-align: center;
     width: 25vw;
+    padding: 1vw;
 }  
 .answerKey {
     display: flex;
