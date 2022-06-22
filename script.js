@@ -419,8 +419,10 @@ let gameOver = () => {
     window.cancelAnimationFrame(game);
     // console.log(`game over`)
     ctx.clearRect(0,0,canvas.width, canvas.height)
-    ctx.fillStyle = "#203825"
+    ctx.fillStyle = "#9FA281"
     ctx.font = "30px Oregano"
+    ctx.drawImage(bg,0,0,canvas.width,canvas.height)
+    console.log(bg2)
     ctx.fillText(`This is the end of your journey. Total Ban: ${score}`, 100,60)
     gameOn = false;
 }
