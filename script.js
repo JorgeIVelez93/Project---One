@@ -275,7 +275,7 @@ let animate = () => {
     }
     
     if (easy.length === 0 && medium.length === 0 && hard.length === 0) {
-        console.log(`array is empty`)
+        
         gameOver()
 
     }
@@ -331,7 +331,7 @@ document.getElementById(`startGame`).onclick = () => {
 }
 
     function chooseM () {
-        console.log(medium)
+        
         questionSlot = [Math.floor(Math.random()*medium.length)];
 
         randomQ = medium.splice(questionSlot,1)[0]
@@ -343,7 +343,7 @@ document.getElementById(`startGame`).onclick = () => {
         }
     }
     function chooseH () {
-        console.log(hard)
+        
         questionSlot = [Math.floor(Math.random()*hard.length)];
         
         randomQ = hard.splice(questionSlot,1)[0]
@@ -368,7 +368,7 @@ document.getElementById(`startGame`).onclick = () => {
         score -= randomQ.value * .10
         wrong.play();
         wrong.volume =.7
-        console.log(score)
+        
         // return false
     } 
     if (easy.length === 0 && medium.length >0) {
@@ -416,12 +416,10 @@ let right = new Audio("audio/sound-effects-library-cash-register-sound.mp3")
 // End Game 
 let gameOver = () => {
     window.cancelAnimationFrame(game);
-    // console.log(`game over`)
     ctx.clearRect(0,0,canvas.width, canvas.height)
     ctx.fillStyle = "#9FA281"
     ctx.font = "30px Oregano"
     ctx.drawImage(bg,0,0,canvas.width,canvas.height)
-    console.log(bg2)
     ctx.fillText(`This is the end of your journey. Total Ban: ${score}`, 100,60)
     gameOn = false;
 }
