@@ -231,8 +231,8 @@ class Difficulty {
         ctx.fillRect(this.x,this.y,this.w,this.h)
     }
     replaceW(word){
-        ctx.fillStyle = "#9FA281"
-        ctx.font = "20px Helvetica"
+        ctx.fillStyle = "#D0D157"
+        ctx.font = "24px Oregano"
         ctx.fillText(word,75,476) 
     }
 }
@@ -247,13 +247,11 @@ let animate = () => {
     ctx.clearRect(0,0,canvas.width,canvas.height)
     // score
     ctx.fillStyle = "#D0D157"
-    ctx.font = "24px Ariel";
+    ctx.font = "24px Oregano";
     ctx.fillText(`Ban:`, 20,45)
     ctx.fillText(`${score}`, 75,47)
     ctx.fillText(`Progress:`, 525,495)
-    // Loading bar
-    // ctx.fillStyle = "#9FA281"
-    // ctx.fillRect(620,0,80,500)
+
     //Avatar
     if (score >= 34000 && score < 224999) {
         ctx.drawImage(img2, 250,95,canvas.width*.35,canvas.height-95)
@@ -322,7 +320,7 @@ document.getElementById(`startGame`).onclick = () => {
 // Question randomizer
     // startQuestion = document.getElementById(`question`)
     questionSlot = [Math.floor(Math.random()*easy.length)];
-    // randomQ = easy[Math.floor(Math.random()*easy.length)]
+   
     // Multiple choice selector
     randomQ= easy.splice(questionSlot,1)[0]
     startQuestion.innerHTML = randomQ.question
@@ -335,11 +333,11 @@ document.getElementById(`startGame`).onclick = () => {
     function chooseM () {
         console.log(medium)
         questionSlot = [Math.floor(Math.random()*medium.length)];
-        // randomQ = medium[Math.floor(Math.random()*medium.length)]
+
         randomQ = medium.splice(questionSlot,1)[0]
         startQuestion.innerHTML = randomQ.question
         // Multiple choice selector
-        // options = document.getElementsByClassName(`answers`)
+        
         for (let i = 0; i < randomQ.answer.length; i++) {
         options[i].innerHTML = randomQ.answer[i]
         }
@@ -347,16 +345,16 @@ document.getElementById(`startGame`).onclick = () => {
     function chooseH () {
         console.log(hard)
         questionSlot = [Math.floor(Math.random()*hard.length)];
-        // randomQ = hard[Math.floor(Math.random()*hard.length)]
+        
         randomQ = hard.splice(questionSlot,1)[0]
         startQuestion.innerHTML = randomQ.question
         // Multiple choice selector
-        // options = document.getElementsByClassName(`answers`)
+        
         for (let i = 0; i < randomQ.answer.length; i++) {
         options[i].innerHTML = randomQ.answer[i]
         }
     }
-    const unchecked = document.getElementById("answer")
+    
 
 //Answer verification
     let subTest = document.getElementById(`submit`).onclick = () => {
@@ -365,8 +363,7 @@ document.getElementById(`startGame`).onclick = () => {
         score += randomQ.value
         right.play();
         right.volume = .5
-        // console.log(score)
-        // return true
+        
     } else {
         score -= randomQ.value * .10
         wrong.play();
@@ -376,16 +373,18 @@ document.getElementById(`startGame`).onclick = () => {
     } 
     if (easy.length === 0 && medium.length >0) {
         chooseM();
-        // diff.drawMedium();
+        
     } else if ( medium.length === 0) {
         chooseH();
-        // diff.drawHard();
+        
     } else {
         chooseE()
-        // diff.drawEasy();
+        
     }
     prog.increase();
-    unchecked.removeAttribute(`checked`)
+    
+    const radio = document.querySelector(`input[type=radio][name=answer]:checked`);
+    radio.checked = false;
 } 
 
  

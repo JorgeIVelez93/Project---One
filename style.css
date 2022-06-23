@@ -4,7 +4,11 @@ body {
     margin: 0;
     font-family: oregano;
     background-color: #203825;
-    color: #9FA281;
+    color: #203825  ;
+    background-image: url(Images/6320c0c3871c630bddbc08a1cb8fb93d.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: 0,0;
 }
 
 .ribbon {
